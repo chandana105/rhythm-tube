@@ -1,0 +1,63 @@
+.playerWrapper {
+  position: absolute;
+  top: 0.5rem;
+  overflow: hidden;
+  width: 92%;
+  z-index: 2;
+  padding-top: 56.25%;
+  padding-left: 0.5rem;
+}
+
+.reactPlayer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* scroll-behavior: smooth; */
+}
+
+.videoDetails {
+  position: absolute;
+  top: 40rem;
+  padding-bottom: 4rem;
+}
+
+.videoHashTitle {
+  font-size: 0.9rem;
+  color: blue;
+}
+
+.videoTitle {
+  font-size: 1.2rem;
+}
+
+.videoActionBar {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 1rem;
+}
+
+.videoActionBarItem {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: flex-end; */
+  align-items: center;
+  cursor: pointer;
+}
+
+.channelDescription {
+  display: flex;
+  padding: 0.5rem 0;
+}
+
+.channelDescription img {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  /* border: 2px solid #000; */
+}
+
+.description {
+  width: 60rem;
+  padding-top: 1rem;
+  padding-left: 3.8rem;
+}

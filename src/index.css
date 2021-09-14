@@ -1,13 +1,168 @@
+@import url("https://rhythmui.netlify.app/styles.css");
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: var(--secondary-color);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.grey-text {
+  color: var(--badge-gray-bg);
+}
+
+.container {
+  background-color: var(--secondary-color);
+}
+
+#home .content main {
+  padding: 0rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+#video main {
+  display: flex;
+  flex-direction: column;
+  padding: 0rem;
+  min-height: 155vh;
+}
+
+#watchLater main {
+  display: flex;
+  padding: 0rem;
+  justify-content: space-between;
+}
+
+#playlists main {
+  justify-content: center;
+  align-items: center;
+}
+
+/* navbar */
+#navbar .search-box {
+  width: 28rem;
+  cursor: pointer;
+  margin-right: 17rem;
+}
+
+#navbar .search-box input {
+  width: 25rem;
+}
+
+/* sidebar */
+.container .side-bar {
+  border-right: 1px solid #000;
+}
+.side-bar {
+  top: 5rem;
+  min-height: 100%;
+}
+
+#side-bar ul {
+  padding: 0rem;
+}
+
+#side-bar .btn {
+  width: 13rem;
+  border-radius: 1rem;
+  background: none;
+}
+
+#side-bar .btn:hover {
+  background: var(--primary-color);
+}
+
+/* videocard */
+.content .products {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.content .products .card,
+#watchLater .card {
+  padding: 0.3rem;
+  justify-content: flex-start;
+  min-width: 18rem;
+  margin-right: 2.3rem;
+  border: none;
+}
+
+#watchLater .card {
+  margin-right: 0rem;
+  min-width: 22rem;
+  align-items: flex-start;
+}
+
+.content .products .card:hover {
+  transition: 0.2s;
+  box-shadow: 0.18px 0.1rem 1.25rem 0.1rem rgb(17, 24, 39, 0.5);
+  border-radius: 0.5rem;
+  cursor: pointer;
+  background-color: #fff;
+}
+
+.content .products .text {
+  display: grid;
+  grid-template-columns: 0.3fr 1fr 0.2fr;
+  padding: 0rem;
+}
+
+.content .products .text .video-avatar {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 0.5rem;
+}
+
+.content .products .text .video-avatar img {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  /* border: 2px solid #000; */
+}
+
+.content .products .text .Video-card-option-menu {
+  cursor: pointer;
+  margin-top: 0.7rem;
+  text-align: center;
+}
+
+.content .products .text .video-description {
+  padding: 0.7rem;
+}
+
+.content .products .text .video-description .title {
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.card-horizontal .thumbnail img {
+  max-width: 18rem;
+  display: block;
+  /* object-fit: cover; */
+}
+
+.card-horizontal .text {
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 0rem;
+}
+
+
+/* playlist s*/
+.card-horizontal button {
+  background: var(--primary-color);
+  border: 1px solid #fff;
+  outline-color: var(--primary-color) ;
+}
+
+.card-horizontal button:focus {
+  border: 2px solid var(--primary-color);
+  
 }
