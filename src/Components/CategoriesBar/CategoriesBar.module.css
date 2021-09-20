@@ -1,11 +1,9 @@
 .categoriesContainer {
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     overflow: auto;
-    padding: 0.6rem 1rem;
-    position: relative;
-    left: 17rem;
+    padding: 0.6rem 1rem;   
   }
   
   .categoryItem {
@@ -14,6 +12,6 @@
     margin-right: 0.5rem;
     padding: 0.5rem 0.9rem;
     border-radius: 10rem;
-    background-color: var(--primary-color);
+    background-color: #fff;
   }
   

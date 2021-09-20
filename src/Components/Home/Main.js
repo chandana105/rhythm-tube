@@ -1,13 +1,21 @@
 import VideoCard from "./VideoCard";
 import CategoriesBar from "../CategoriesBar/CategoriesBar";
-const Main = () => {
+import Spinner from "../Spinner";
+import { useVideo } from "../../Contexts/VideoProvider";
+
+const Main = ({ filteredData }) => {
+  const { showLoader } = useVideo();
   return (
     <div className="content">
       <main>
-        {/* categoreis */}
         <CategoriesBar />
         <div className="products">
-          <VideoCard />
+          <div className="loader">
+            {showLoader && <Spinner type="Audio" color="#c4b5fd" height={60} />}
+          </div>
+          {filteredData.map((item) => (
+            <VideoCard item={item} key={item._id} />
+          ))}
         </div>
       </main>
     </div>

@@ -1,11 +1,14 @@
 import { NavLink } from "react-router-dom";
 import music from "../assets/images/music.svg";
 import person from "../assets/images/person.png";
+import { useVideo } from "../Contexts/VideoProvider";
 
 const Nav = ({ search }) => {
   const activeStyle = {
     color: "#6D28D9 ",
   };
+  const { searchBy, videoDispatch } = useVideo();
+
   return (
     <nav className="header" id="navbar">
       <NavLink to="/" end activeStyle={activeStyle} className="logo">
@@ -23,13 +26,13 @@ const Nav = ({ search }) => {
               type="text"
               name=""
               placeholder="Search videos"
-              // value={searchBy}
-              // onChange={(e) =>
-              //   productDispatch({
-              //     type: "SEARCH_BY_PRODUCT_TITLE",
-              //     payload: e.target.value,
-              //   })
-              // }
+              value={searchBy}
+              onChange={(e) =>
+                videoDispatch({
+                  type: "SEARCH_BY_VIDEO_TITLE",
+                  payload: e.target.value,
+                })
+              }
             />
           </div>
         </div>

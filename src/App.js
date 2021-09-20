@@ -10,8 +10,8 @@ function App() {
     <>
       <Routes>
         <Route path="/" element={<Home />} />
-        {/* /video/:videId */}
-        <Route path="/video" element={<Video />} />
+        <Route path="/categories/:categoryId" element={<Home />} />
+        <Route path="/video/:videoID" element={<Video />} />
         <Route path="/watchlater" element={<WatchLater />} />
         <Route path="/likedvideos" element={<LikedVideos />} />
         <Route path="/playlists" element={<Playlists />} />

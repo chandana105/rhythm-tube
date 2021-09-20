@@ -1,36 +1,39 @@
 import { Link } from "react-router-dom";
-const VideoCard = () => {
+import { generateThumbnail, trimStr } from "../../Utils/utils";
+
+const VideoCard = ({ item }) => {
+  const {
+    _id,
+    videoId,
+    title,
+    viewsCount,
+    uploadDate,
+    channelName,
+    channelLogo,
+    duration,
+  } = item;
+
   return (
     <>
       <div className="card" id="card">
         <div className="thumbnail">
-          {/* <Link to={`/products/${id}`}> */}
-          <Link to="/video">
-            <img
-              src="https://i.ytimg.com/vi/vUCM_0evdQY/hq720.jpg?sqp=-…AFwAcABBg==&rs=AOn4CLCAMv_ccMZozPUQOzs_d7QUrjsEfQ"
-              alt="card"
-            />
-            {/* </Link> */}
+          <Link to={`/video/${_id}`}>
+            <img src={generateThumbnail(videoId, title)} alt="card" />
           </Link>
+          <div className="video-duration">{duration}</div>
         </div>
         <div className="text">
           <div className="video-avatar">
-            <img
-              src="https://yt3.ggpht.com/ytc/AKedOLSZoSQN4LlZb2YGnXsVGuErzR8oI2fh26puaBcs6A=s68-c-k-c0x00ffffff-no-rj"
-              alt=""
-            />
+            <img src={channelLogo} alt="channelLogo" />
           </div>
           <div className="video-description">
-            <p className="title">
-              Ae Dil Hai Mushkil Title Track Full Video - Ranbir, Anushka,
-              Aishwarya|Arijit|Pritam
-            </p>
-            <p class="grey-text">SonyMusicIndiaVEVO</p>
-            <p class="grey-text">299M views</p>
-            <p class="grey-text">March 3, 2017</p>
+            <p className="title">{trimStr(title)}</p>
+            <p className="grey-text">{channelName}</p>
+            <p className="grey-text">{viewsCount} views</p>
+            <p className="grey-text">{uploadDate}</p>
           </div>
           <div className="Video-card-option-menu">
-            <i class="fas fa-ellipsis-v"></i>
+            <i className="fas fa-ellipsis-v"></i>
           </div>
         </div>
       </div>

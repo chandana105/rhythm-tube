@@ -17,10 +17,9 @@ const VideoList = () => {
           <div className="grey-text">description</div>
         </div>
         <div className={styles.optionMenuContainer}>
-          <i class="fas fa-ellipsis-v"></i>
+          <i className="fas fa-ellipsis-v"></i>
         </div>
       </div>
-      
     </>
   );
 };

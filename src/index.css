@@ -15,12 +15,33 @@ body {
   background-color: var(--secondary-color);
 }
 
+.loader {
+  margin: auto;
+  position: absolute;
+  top: 7rem;
+  left: 24rem;
+}
+
+.video-duration {
+  position: absolute;
+  padding: 0.1rem 0.3rem;
+  bottom: 0.4rem;
+  right: 0;
+  background-color: var(--header-link-color);
+  color: var(--text-container-color);
+  font-weight: bold;
+}
+
+.active {
+  border-bottom: none;
+}
+
 #home .content main {
   padding: 0rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-end;
+  /* align-items: flex-end; */
 }
 
 #video main {
@@ -76,6 +97,7 @@ body {
 }
 
 /* videocard */
+
 .content .products {
   position: relative;
   display: flex;
@@ -91,6 +113,10 @@ body {
   min-width: 18rem;
   margin-right: 2.3rem;
   border: none;
+}
+
+.content .products .card {
+  height: 70vh;
 }
 
 #watchLater .card {
@@ -154,15 +180,13 @@ body {
   padding: 0rem;
 }
 
-
 /* playlist s*/
 .card-horizontal button {
   background: var(--primary-color);
   border: 1px solid #fff;
-  outline-color: var(--primary-color) ;
+  outline-color: var(--primary-color);
 }
 
 .card-horizontal button:focus {
   border: 2px solid var(--primary-color);
-  
 }
