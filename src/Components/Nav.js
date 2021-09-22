@@ -1,13 +1,14 @@
 import { NavLink } from "react-router-dom";
 import music from "../assets/images/music.svg";
 import person from "../assets/images/person.png";
+import { useAuth } from "../Contexts/AuthProvider";
 import { useVideo } from "../Contexts/VideoProvider";
-
 const Nav = ({ search }) => {
   const activeStyle = {
     color: "#6D28D9 ",
   };
   const { searchBy, videoDispatch } = useVideo();
+  const { logoutHandler, token , user: {username} } = useAuth();
 
   return (
     <nav className="header" id="navbar">
@@ -38,9 +39,20 @@ const Nav = ({ search }) => {
         </div>
       )}
 
-      <span className="avatar avatar-small">
-        <img src={person} alt="avatar-sm" />
-      </span>
+      {token && (
+        <>
+        <div>Hello, {username}</div>
+        <button className="btn btn-primary" onClick={logoutHandler}>
+          Logout
+        </button>
+        </>
+      )}
+
+      <NavLink to={!token ? "/login" : '/profile'} activeStyle={activeStyle}>
+        <span className="avatar avatar-small">
+          <img src={person} alt="avatar-sm" />
+        </span>
+      </NavLink>
     </nav>
   );
 };

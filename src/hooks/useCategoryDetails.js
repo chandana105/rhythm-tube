@@ -6,7 +6,6 @@ export const useCategoryDetails = (requestType, url) => {
   const { videoDispatch } = useVideo();
   const [categoryDetails, setCategoryDetails] = useState([]);
 
-  console.log({ url });
 
   const getCategoryDetails = async () => {
     videoDispatch({
@@ -17,7 +16,6 @@ export const useCategoryDetails = (requestType, url) => {
         method: requestType,
         url,
       });
-      console.log({ data }, "categories");
       setCategoryDetails(data.category.videos);
     } catch (err) {
       console.log(err);

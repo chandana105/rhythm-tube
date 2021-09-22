@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { generateThumbnail, trimStr } from "../../Utils/utils";
+import { useModal } from "../../Contexts/ModalProvider";
 
 const VideoCard = ({ item }) => {
   const {
@@ -12,6 +13,8 @@ const VideoCard = ({ item }) => {
     channelLogo,
     duration,
   } = item;
+
+  const {toggleModalVisibility } = useModal();
 
   return (
     <>
@@ -32,7 +35,10 @@ const VideoCard = ({ item }) => {
             <p className="grey-text">{viewsCount} views</p>
             <p className="grey-text">{uploadDate}</p>
           </div>
-          <div className="Video-card-option-menu">
+          <div
+            className="Video-card-option-menu"
+            onClick={toggleModalVisibility}
+          >
             <i className="fas fa-ellipsis-v"></i>
           </div>
         </div>

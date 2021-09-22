@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+// import {RiPlayListFill} from 'react-icons/ri'
+
 const Sidebar = () => {
   return (
     <div className="side-bar" id="side-bar">

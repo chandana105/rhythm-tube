@@ -1,3 +1,5 @@
+import axios from "axios";
+
 export const generateThumbnail = (videoId, title) => {
   if (
     title ===
@@ -17,3 +19,10 @@ export const trimStr = (str) => {
   const len = 70;
   return str.length > len ? str.substring(0, len) + "..." : str;
 };
+
+export function setupAuthHeaderForServiceCalls(token) {
+  if (token) {
+    return (axios.defaults.headers.common["Authorization"] = `Bearer ${token}`);
+  }
+  delete axios.defaults.headers.common["Authorization"];
+}

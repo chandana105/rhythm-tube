@@ -14,4 +14,8 @@
     border-radius: 10rem;
     background-color: #fff;
   }
+
+  .categoryItem:hover{
+    background-color: var(--butn-hover);
+  }
   
