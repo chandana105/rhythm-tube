@@ -16,30 +16,15 @@ const PlaylistModal = ({ handleClose }) => {
       <div id="modal" className="modal modal-display playlist-modal">
         <header className="modal-header">
           <div className="modal-text">
-          <p>Save to...</p>
+            <p>Save to...</p>
             <ul>
               <li>
                 <label className="checkbox-label">
                   <input
                     type="checkbox"
                     className="checkbox"
-                    checked="true"
-                    // onChange={() =>
-                    //   productDispatch({ type: "TOGGLE_INVENTORY" })
-                    // }
-                  />
-                  <span>Playlist 1</span>
-                </label>
-              </li>
-              <li>
-                <label className="checkbox-label">
-                  <input
-                    type="checkbox"
-                    className="checkbox"
-                    checked="true"
-                    // onChange={() =>
-                    //   productDispatch({ type: "TOGGLE_INVENTORY" })
-                    // }
+                    checked={true}
+                    onChange={() => {}}
                   />
                   <span>Playlist 1</span>
                 </label>
@@ -64,9 +49,7 @@ const PlaylistModal = ({ handleClose }) => {
                 placeholder="Enter new playlist name"
               />
             </div>
-            <button className="btn btn-primary" >
-              Create
-            </button>
+            <button className="btn btn-primary">Create</button>
           </footer>
         )}
       </div>
@@ -106,3 +89,7 @@ Create new playlist
 </div>
 )} */
 }
+
+// onChange={() =>
+//   productDispatch({ type: "TOGGLE_INVENTORY" })
+// }
