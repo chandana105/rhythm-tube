@@ -7,6 +7,10 @@ body {
   background-color: var(--secondary-color);
 }
 
+:root {
+  --badge-gray-bg: #3b7280;
+}
+
 .btn:hover {
   background-color: var(--butn-hover);
 }
@@ -17,6 +21,10 @@ body {
 
 .container {
   background-color: var(--secondary-color);
+}
+
+.icons-large {
+  font-size: 1.5rem;
 }
 
 .loader {
@@ -349,11 +357,18 @@ body {
   justify-content: flex-start;
   align-items: flex-start;
   padding: 1.5rem;
+  padding-bottom: 0rem;
+
   border: none;
 }
 
 #modal .btn {
   width: 20rem;
+  border-radius: 0.5rem;
+}
+
+#modal #playlist-header {
+  padding-bottom: 1.5rem;
 }
 
 #modal .modal-footer {
@@ -364,6 +379,10 @@ body {
   padding: 1rem;
   padding-top: 0rem;
   border: none;
+}
+
+#modal .watchlater-footer {
+  padding-top: 1rem;
 }
 
 #modal #footer {

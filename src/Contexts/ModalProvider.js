@@ -7,16 +7,16 @@ export const useModal = () => {
 };
 
 export const ModalProvider = ({ children }) => {
-    const [showModal, setShowModal] = useState(false);
+  const [showModal, setShowModal] = useState(false);
+  const [modalData, setModalData] = useState({});
 
-    const toggleModalVisibility = () => {
-        console.log('ran')
-        setShowModal(visibility => !visibility)
-    }
+  const toggleModalVisibility = () => {
+    setShowModal((visibility) => !visibility);
+  };
 
   return (
     <ModalContext.Provider
-      value={{showModal, toggleModalVisibility}}
+      value={{ showModal, modalData, setModalData, toggleModalVisibility }}
     >
       {children}
     </ModalContext.Provider>

@@ -7,6 +7,7 @@ import { VideoProvider } from "./Contexts/VideoProvider";
 import { AuthProvider } from "./Contexts/AuthProvider";
 import { ModalProvider } from "./Contexts/ModalProvider";
 import { PlaylistModalProvider } from "./Contexts/PlaylistModalProvider";
+import { DataProvider } from "./Contexts/DataProvider";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -15,7 +16,9 @@ ReactDOM.render(
         <AuthProvider>
           <ModalProvider>
             <PlaylistModalProvider>
-              <App />
+              <DataProvider>
+                <App />
+              </DataProvider>
             </PlaylistModalProvider>
           </ModalProvider>
         </AuthProvider>

@@ -4,6 +4,7 @@
   margin-bottom: 1rem;
   margin-left: 24rem;
   margin-top: 0.4rem;
+  padding:0.5rem
 }
 
 .videoContainer:hover {
@@ -12,7 +13,6 @@
   border-radius: 0.5rem;
   cursor: pointer;
   background-color: #fff;
-  padding: 0.2rem;
 }
 
 .videoText {
@@ -34,7 +34,6 @@
 
 .image {
   display: flex;
-  height: 12rem;
   padding-right:0.2rem;
   max-width: 100%;
 }

@@ -1,22 +1,27 @@
 import styles from "./VideoList.module.css";
+import { generateThumbnail, trimStr } from "../../Utils/utils";
+import { Link } from "react-router-dom";
 
-const VideoList = () => {
+const VideoList = ({ item , onOptionMenuClick }) => {
+  const { _id, video } = item;
+  const { videoId, title, channelName } = video;
+  
   return (
     <>
       <div className={`card-horizontal ${styles.videoContainer}`}>
         <div className={`thumbnail ${styles.image}`}>
-          <img
-            src="https://i.ytimg.com/vi/vUCM_0evdQY/hq720.jpg?sqp=-…AFwAcABBg==&rs=AOn4CLCAMv_ccMZozPUQOzs_d7QUrjsEfQ"
-            alt="horizontal-img"
-          />
+          <Link to={`/video/${_id}`}>
+            <img src={generateThumbnail(videoId, title)} alt="card" />
+          </Link>
         </div>
         <div className={styles.videoText}>
-          <div className={styles.videoTitle}>
-            Ae Dil Hai Mushkil Title Track Full Video
-          </div>
-          <div className="grey-text">description</div>
+          <div className={styles.videoTitle}>{trimStr(title)}</div>
+          <div className="grey-text">{channelName}</div>
         </div>
-        <div className={styles.optionMenuContainer}>
+        <div
+          className={styles.optionMenuContainer}
+          onClick={() => onOptionMenuClick(item)}
+        >
           <i className="fas fa-ellipsis-v"></i>
         </div>
       </div>

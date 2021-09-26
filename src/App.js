@@ -17,14 +17,19 @@ import { useAuth } from "./Contexts/AuthProvider";
 import { useEffect } from "react";
 import { setupAuthHeaderForServiceCalls } from "./Utils/utils";
 import { PrivateRoute } from "./PrivateRoutes/PrivateRoute";
+import { useData } from "./Contexts/DataProvider";
 
 function App() {
   const { token, getUserData } = useAuth();
+  const { watchlater, likedVideos, getLikedVideosData, getWatchlaterData } =
+    useData();
 
   useEffect(() => {
     setupAuthHeaderForServiceCalls(token);
     if (token) {
       getUserData();
+      getLikedVideosData();
+      getWatchlaterData();
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [token]);
@@ -34,10 +39,16 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/categories/:categoryId" element={<Home />} />
         <Route path="/video/:videoID" element={<Video />} />
-        {/* <PrivateRoute path="/watchlater" element={<WatchLater />} /> */}
-        <PrivateRoute path="/watchlater" element={<EmptyWatchLater />} />
-        {/* <PrivateRoute path="/likedvideos" element={<LikedVideos />} /> */}
-        <PrivateRoute path="/likedvideos" element={<EmptyLikedVideos />} />
+        {watchlater.length === 0 ? (
+          <PrivateRoute path="/watchlater" element={<EmptyWatchLater />} />
+        ) : (
+          <PrivateRoute path="/watchlater" element={<WatchLater />} />
+        )}
+        {likedVideos.length === 0 ? (
+          <PrivateRoute path="/likedvideos" element={<EmptyLikedVideos />} />
+        ) : (
+          <PrivateRoute path="/likedvideos" element={<LikedVideos />} />
+        )}
         {/* <PrivateRoute path="/playlists" element={<Playlists />} /> */}
         <PrivateRoute path="/playlists" element={<EmptyPlaylists />} />
         {/* /playlists/:playlsitId */}

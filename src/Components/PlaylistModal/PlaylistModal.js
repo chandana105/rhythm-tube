@@ -14,7 +14,7 @@ const PlaylistModal = ({ handleClose }) => {
         onClick={handleClose}
       ></div>
       <div id="modal" className="modal modal-display playlist-modal">
-        <header className="modal-header">
+        <header className="modal-header" id="playlist-header">
           <div className="modal-text">
             <p>Save to...</p>
             <ul>
