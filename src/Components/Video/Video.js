@@ -14,7 +14,7 @@ import PlaylistModal from "../PlaylistModal/PlaylistModal";
 import { itemInLikedVideos } from "../../Utils/utils";
 import { useData } from "../../Contexts/DataProvider";
 import { useLikedVideos } from "../../hooks/useLikedVideos";
-import { useState } from "react/cjs/react.development";
+import { useState } from "react";
 import Spinner from "../Spinner";
 
 const Video = () => {
