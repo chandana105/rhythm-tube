@@ -23,7 +23,6 @@ export const usePlaylists = () => {
         ],
       });
       if (response.status === 200) {
-        console.log(response.data.getNewPlaylist, "playlist");
         dataDispatch({
           type: "CREATE_NEW_PLAYLIST",
           payload: response.data.getNewPlaylist,
@@ -76,7 +75,6 @@ export const usePlaylists = () => {
         `${url}playlists/userId/${playlistId}/${videoId}`
       );
       if (response.status === 200) {
-        console.log({ response }, "del");
         dataDispatch({
           type: "REMOVE_VIDEO_FROM_PLAYLIST",
           payload: response.data,
@@ -96,7 +94,6 @@ export const usePlaylists = () => {
         `${url}playlists/userId/${playlistId}`
       );
       if (response.status === 200) {
-        console.log({ response }, "del");
         dataDispatch({
           type: "REMOVE_PLAYLIST",
           payload: response.data.deletedPlaylist,
