@@ -21,8 +21,14 @@ import { useData } from "./Contexts/DataProvider";
 
 function App() {
   const { token, getUserData } = useAuth();
-  const { watchlater, likedVideos, getLikedVideosData, getWatchlaterData } =
-    useData();
+  const {
+    watchlater,
+    likedVideos,
+    playlists,
+    getLikedVideosData,
+    getWatchlaterData,
+    getAllPlaylists,
+  } = useData();
 
   useEffect(() => {
     setupAuthHeaderForServiceCalls(token);
@@ -30,6 +36,7 @@ function App() {
       getUserData();
       getLikedVideosData();
       getWatchlaterData();
+      getAllPlaylists();
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [token]);
@@ -49,10 +56,19 @@ function App() {
         ) : (
           <PrivateRoute path="/likedvideos" element={<LikedVideos />} />
         )}
-        {/* <PrivateRoute path="/playlists" element={<Playlists />} /> */}
-        <PrivateRoute path="/playlists" element={<EmptyPlaylists />} />
-        {/* /playlists/:playlsitId */}
-        <Route path="/playlists/videos" element={<PlaylistVideos />} />
+        {playlists.length === 0 ? (
+          <PrivateRoute path="/playlists" element={<EmptyPlaylists />} />
+        ) : (
+          <PrivateRoute path="/playlists" element={<Playlists />} />
+        )}
+        {playlists.length === 0 ? (
+          <PrivateRoute
+            path="/playlists/:playlistId"
+            element={<EmptyPlaylists />}
+          />
+        ) : (
+          <Route path="/playlists/:playlistId" element={<PlaylistVideos />} />
+        )}
         <PrivateRoute path="/profile" element={<Profile />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/login" element={<Login />} />

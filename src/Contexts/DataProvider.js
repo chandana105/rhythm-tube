@@ -6,11 +6,12 @@ import url from "../config";
 const DataContext = createContext();
 
 export const DataProvider = ({ children }) => {
-  const [{ likedVideos, watchlater }, dataDispatch] = useReducer(
+  const [{ likedVideos, watchlater, playlists }, dataDispatch] = useReducer(
     generalReducer,
     {
       likedVideos: [],
       watchlater: [],
+      playlists : []
     }
   );
 
@@ -42,13 +43,29 @@ export const DataProvider = ({ children }) => {
     }
   };
 
+  const getAllPlaylists =  async () => {
+    try {
+      const response = await axios.get(`${url}playlists/userId`);
+      if (response.status === 200) {
+        dataDispatch({
+          type: "FETCH_ALL_PLAYLISTS",
+          payload: response.data.playlists,
+        });
+      }
+    } catch (err) {
+      console.log("Error while getting all the playlists of the user", err);
+    }
+  }
+
   return (
     <DataContext.Provider
       value={{
         likedVideos,
         watchlater,
+        playlists,
         getLikedVideosData,
         getWatchlaterData,
+        getAllPlaylists,
         dataDispatch,
       }}
     >

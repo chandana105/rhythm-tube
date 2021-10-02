@@ -37,12 +37,6 @@ const Sidebar = () => {
             </button>
           </Link>
         </li>
-        <li>
-          <button className="btn btn-primary btn-icon">
-            <i className="fas fa-music"></i>
-            <span>Library</span>
-          </button>
-        </li>
       </ul>
     </div>
   );
