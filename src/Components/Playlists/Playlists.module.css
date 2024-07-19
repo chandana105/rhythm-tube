@@ -1,0 +1,43 @@
+.videoContainer {
+  display: grid;
+  grid-template-columns: 2fr 2fr 0.5fr;
+  margin-bottom: 1rem;
+  margin-top: 0.4rem;
+  padding: 1rem;
+  border: 2px solid #fff;
+}
+
+.videoContainer:hover {
+  transition: 0.2s;
+  box-shadow: 0.18px 0.1rem 1.25rem 0.1rem rgb(17, 24, 39, 0.5);
+  border-radius: 0.5rem;
+  cursor: pointer;
+  background-color: #fff;
+  /* padding: 0.2rem; */
+}
+
+.videoText {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  font-size: larger;
+}
+
+.videoTitle {
+  font-weight: bold;
+}
+
+.optionMenuContainer {
+  padding: 0rem;
+  text-align: center;
+  font-size: 2rem;
+  cursor: pointer;
+  height: fit-content;
+}
+
+.image {
+  display: flex;
+  height: 12rem;
+  padding-right: 1rem;
+  max-width: 100%;
+}

@@ -1,0 +1,21 @@
+.categoriesContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: auto;
+    padding: 0.6rem 1rem;   
+  }
+  
+  .categoryItem {
+    text-align: center;
+    min-width: fit-content;
+    margin-right: 0.5rem;
+    padding: 0.5rem 0.9rem;
+    border-radius: 10rem;
+    background-color: #fff;
+  }
+
+  .categoryItem:hover{
+    background-color: var(--butn-hover);
+  }
+  

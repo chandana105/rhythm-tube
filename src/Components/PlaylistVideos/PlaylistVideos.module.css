@@ -1,0 +1,15 @@
+.playListBar {
+    display: block;
+    position: fixed;
+    padding: 1rem;
+    width: 30%;
+    height: 100vh;
+    border-right: 0.1rem solid gray;
+  }
+  
+  .videoItems {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+  }
+  
