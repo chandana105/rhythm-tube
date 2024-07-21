@@ -3,7 +3,6 @@
 Rhythm-Tube is a Video Library Application, to watch different song videos from the curated List. The project is built using ReactJS as the main framework for the front end with the help of react useReducer + contextAPI for global state management. User Authentication is done with the help of JWT tokens. User can perform CRUD operations on Playlist and CRD on watch laters and like videos.
 
  - Live demo: [RhythmTube](https://rhythm-tube.netlify.app/)
- - [Live repl Server](https://replit.com/@Chandana1/Rhythm-Tube-Backend#index.js)
  - [Github Backend Url](https://github.com/chandana105/Rhythm-Tube-Backend)
 
 ## Tech Stack
