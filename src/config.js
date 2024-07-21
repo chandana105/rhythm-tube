@@ -1,5 +1,5 @@
 const Config = {
-  url: "https://rhythm-tube-backend-dpucil9y3-chandana105s-projects.vercel.app/",
+  url: "https://rhythm-tube-backend.vercel.app/",
 };
 
 export default Config.url;

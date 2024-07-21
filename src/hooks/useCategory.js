@@ -20,7 +20,7 @@ export const useCategory = (requestType, url) => {
           payload: data.categories,
         });
       } catch (err) {
-        console.log(err);
+        console.log(err , 'here');
         videoDispatch({
           type: "FETCH_ALL_CATEGORIES",
           payload: [],
